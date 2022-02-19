@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="image/cicero-icon-32x32.png" sizes="16x16" />
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <style>
+      html,
+      body,
+      div,
+      input,
+      span,
+      textarea,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      svg,
+      text {
+        font-family: "Arial", sans-serif !important;
+      }
+      .text-hidden {
+        display: none;
+      }
+    </style>
+    <title>Cicero Gallery</title>
+  </head>
+  <body>
+    <header class="container" id="header">
+      <div class="row">
+        <div class="col-12 py-2">
+          <h1 class="h3 m-0">Cicero Gallery</h1>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 pt-3">
+          <p>
+            This page provides a gallery of example cases for Cicero, a declarative grammar for responsive design transformation. In each case, we provide the design specification of original view, Cicero specification, 
+            and the transformed view with annotations.
+            Desktop to Mobile (<i class="bi bi-laptop"></i> <i class="bi bi-arrow-right"></i> <i class="bi bi-phone"></i>) transformations are provided with step-by-step illustration.
+            The contents of this gallery are static, but the internet connection is required for Bootstrap resources (layout, icons, etc.).
+          </p>
+        </div>
+        <div class="col-12 pt-3">
+          <h2 class="h4">Extended Vega-Lite</h2>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/budgets-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the COVID-19 Aid Budget Plans case" />
+            <div class="card-body">
+              <h5 class="card-title">COVID-19 Aid Budget Plans</h5>
+              <p class="card-text">A multi-column bar chart about budget plans for the COVID-19 aid by the political parties of U.S.A.</p>
+              <p>
+                <a href="budgets-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="budgets-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0"><a href="https://www.nytimes.com/interactive/2020/07/30/upshot/coronavirus-stimulus-bill.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/cost-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the Disaster Cost case" />
+            <div class="card-body">
+              <h5 class="card-title">Disaster Cost</h5>
+              <p class="card-text">A bar chart about cost of loss and damage caused by historical disasters.</p>
+              <p>
+                  <a href="cost-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="cost-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://www.nytimes.com/interactive/2018/05/24/us/disasters-hurricanes-wildfires-storms.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+                <a href="https://jhoffswell.github.io/website/resources/supplemental/responsive-supplemental/examples-cost.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Hoffswell et al.</a>
+                <a href="cost-desktop.html#important" class="btn btn-outline-primary btn-sm mb-1">Use of <code>important</code></a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/spills-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the Oil Spills case" />
+            <div class="card-body">
+              <h5 class="card-title">Oil Spills</h5>
+              <p class="card-text">A map visualization about oil spills on the ocean.</p>
+              <p>
+                <a href="spills-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="spills-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://graphics.reuters.com/OIL-SPILLS/010060SL1GQ/index.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+                <a href="https://jhoffswell.github.io/website/resources/supplemental/responsive-supplemental/examples-spills.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Hoffswell et al.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/spending-line-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the COVID Spending (Line) case" />
+            <div class="card-body">
+              <h5 class="card-title">COVID Spending (Line)</h5>
+              <p class="card-text">A line chart about changes to how people have been spending money since the COVID-19 outbreak.</p>
+              <p>
+                <a href="spending-line-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="spending-line-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://www.nytimes.com/interactive/2020/04/11/business/economy/coronavirus-us-economy-spending.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/spending-bubble-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the COVID Spending (Bubble) case" />
+            <div class="card-body">
+              <h5 class="card-title">COVID Spending (Bubble)</h5>
+              <p class="card-text">A bubble chart about changes to how people have been spending money since the COVID-19 outbreak (by low-level sector).</p>
+              <p>
+                <a href="spending-bubble-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="spending-bubble-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://www.nytimes.com/interactive/2020/04/11/business/economy/coronavirus-us-economy-spending.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/us-cabinet-entire-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the US Cabinet (Entire) case" />
+            <div class="card-body">
+              <h5 class="card-title">US Cabinet (Entire)</h5>
+              <p class="card-text">A block bar chart about changes to the gender and racial diversity in the Cabinet members of U.S.A. over time (per each president).</p>
+              <p>
+                <a href="us-cabinet-entire-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="us-cabinet-entire-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://www.nytimes.com/interactive/2017/01/13/us/politics/trump-cabinet-women-minorities.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/us-cabinet-partial-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the US Cabinet (Partial) case" />
+            <div class="card-body">
+              <h5 class="card-title">US Cabinet (Partial)</h5>
+              <p class="card-text">A block bar chart about changes to the number of the female Cabinet members of U.S.A. over time (per each president). </p>
+              <p>
+                <a href="us-cabinet-partial-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="us-cabinet-partial-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://www.nytimes.com/interactive/2017/01/13/us/politics/trump-cabinet-women-minorities.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/bond-yields-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the Bond Yields case" />
+            <div class="card-body">
+              <h5 class="card-title">Bond Yields</h5>
+              <p class="card-text">A line (and area) chart about changes to forcasted GDP growth rate over time.</p>
+              <p>
+                <a href="bond-yields-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="bond-yields-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://www.wsj.com/graphics/how-bond-yields-got-this-low/" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/french-election-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the French Election case" />
+            <div class="card-body">
+              <h5 class="card-title">French Election</h5>
+              <p class="card-text">A choropleth about the turnout of 2017 Presidential Election in France.</p>
+              <p>
+                <a href="french-election-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="french-election-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://www.nytimes.com/interactive/2017/04/23/world/europe/french-election-results-maps.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/kennedy-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the Kennedy case" />
+            <div class="card-body">
+              <h5 class="card-title">Justice Kennedy</h5>
+              <p class="card-text">A dot plot about the percentage of the time in which each of the Supreme Court Justices voted in majority.</p>
+              <p>
+                <a href="kennedy-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="kennedy-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://www.nytimes.com/interactive/2018/06/27/us/politics/kennedy-retirement-supreme-court-median.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+                <a href="https://jhoffswell.github.io/website/resources/supplemental/responsive-supplemental/examples-kennedy.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Hoffswell et al.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <img src="thumbnails/overdose-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the Drug Overdose case" />
+            <div class="card-body">
+              <h5 class="card-title">Drug Overdose</h5>
+              <p class="card-text">Small multiples of bar charts about death cases due to drug overdose in six counties in Ohio from 2010 to 2017.</p>
+              <p>
+                <a href="overdose-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                  Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+                </a>
+                <a href="overdose-mobile.html" class="btn btn-warning btn-sm" title="Cicero Specification from Mobile to Desktop">
+                  Cicero: <i class="bi bi-phone-fill"><span class="text-hidden">Mobile</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-laptop-fill"><span class="text-hidden">Desktop</span></i>
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="https://www.nytimes.com/interactive/2017/06/05/upshot/opioid-epidemic-drug-overdose-deaths-are-rising-faster-than-ever.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-12 pt-3">
+        <h2 class="h4">Vega-Lite</h2>
+        <p>
+          Below, we present examples using original Vega-Lite and reusing Cicero rules.
+        </p>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12 pt-3">
+        <div class="card">
+          <img src="thumbnails/vl-disaster-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the Natural Disaster case" />
+          <div class="card-body">
+            <h5 class="card-title">Natural Disaster (VL)</h5>
+            <p class="card-text">A bubble chart about "global deaths from natural disasters".</p>
+            <p>
+              <a href="vl-disaster-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+              </a>
+            </p>
+            <p class="mb-0"><a href="https://ourworldindata.org/natural-disasters" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Original article</a>
+              <a href="https://vega.github.io/vega-lite/examples/circle_natural_disasters.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Vega-Lite Gallery</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12 pt-3">
+        <div class="card">
+          <img src="thumbnails/vl-wheat-desktop.png" class="card-img-top border-bottom" alt="A thumbnail image for the Wheat and Wages case" />
+          <div class="card-body">
+            <h5 class="card-title">Wheat and Wages (VL)</h5>
+            <p class="card-text">A recreation of William Playfair’s classic chart visualizing the price of wheat, the wages of a mechanic, and the reigning British monarch.</p>
+            <p>
+              <a href="vl-wheat-desktop.html" class="btn btn-primary btn-sm" title="Cicero Specification from Desktop to Mobile">
+                Cicero: <i class="bi bi-laptop"><span class="text-hidden">Desktop</span></i> <i class="bi bi-arrow-right"><span class="text-hidden">to</span></i> <i class="bi bi-phone"><span class="text-hidden">Mobile</span></i>
+              </a>
+            </p>
+            <p class="mb-0"><a href="https://github.com/manzt" class="btn btn-outline-primary btn-sm mb-1" target="_blank">Based on a chart by @manzt</a>
+              <a href="https://vega.github.io/vega-lite/examples/wheat_wages.html" class="btn btn-outline-primary btn-sm mb-1" target="_blank">See in Vega-Lite Gallery</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <h3>Documents</h3>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="h6">Technical details of our extended version of Vega-Lite, a Cicero compiler for this extension, and our prototype responsive visualization recommender</h5>
+              <a class="btn btn-primary" href="cicero-tech-details.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i> PDF file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="h6">Cicero expressions for the rules of MobileVisFixer of which the meanings are clearly defined in the MobileVisFixer paper</h5>
+              <a class="btn btn-primary" href="expressing-mobilevisfixer-actions.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i> PDF file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="h6">Two in-depth walk-through cases for Disaster Cost (from mobile to desktop) and Bond Yields (from desktop to mobile)</h5>
+              <a class="btn btn-primary" href="additional-walkthroughs.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i> PDF file</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 pt-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="h6">The formal specification of our extended version of Vega-Lite.</h5>
+              <a class="btn btn-primary" href="extended-vl-formal-spec.pdf" target="_blank"><i class="bi bi-file-earmark-pdf"></i> PDF file</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <h3>Recommender Demo Video</h3>
+          <div class="card">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; height: auto;">
+                <video class="embed-responsive-item" width="100%" height="auto" allowfullscreen controls>
+                  <source src="image/cicero-recommender-demo.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="container my-5">
+      <div class="row">
+        <div class="col-12" style="color: #999999;">
+          &copy; 2021 Anonymous
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

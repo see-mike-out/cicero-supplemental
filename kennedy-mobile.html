@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="image/cicero-icon-32x32.png" sizes="16x16" />
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <style>
+      html,
+      body,
+      div,
+      input,
+      span,
+      textarea,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      svg,
+      text {
+        font-family: "Arial", sans-serif !important;
+      }
+      pre.code {
+        white-space: pre-wrap;
+        font-size: 12px;
+      }
+      pre.code::before {
+        counter-reset: listing;
+      }
+      pre.code code {
+        counter-increment: listing;
+      }
+      pre.code code::before {
+        content: counter(listing);
+        display: inline-block;
+        width: 2.5em; /* now works */
+        padding-left: auto; /* now works */
+        margin-left: auto; /* now works */
+        text-align: left; /* now works */
+        color: #aaaaaa;
+      }
+      pre.code annotate {
+        color: #00aa00;
+        padding-left: 1em;
+      }
+      #fronto-view,
+      .fronto-view-transform {
+        border-radius: .25rem;
+        background-color: white;
+        overflow: scroll;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: fit-content;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: 1px solid rgba(0,0,0,.125);
+      }
+      div[data-role=fronto-view] {
+        position: absolute;
+      }
+      .card-header {
+        font-size: 0.8rem;
+      }
+      .card-header strong {
+        font-weight: 500;
+      }
+    </style>
+    <title>Justice Kennedy (Mobile → Desktop)</title>
+  </head>
+  <body>
+    <header class="container" id="header">
+      <div class="row">
+        <div class="col-12 py-2">
+          <a href="index.html">&lt; Back to the list</a>
+          <h1 class="h3 m-0">Justice Kennedy (Mobile → Desktop)</h1>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 pt-3">
+          <p>A bar chart about the percentage of the time in which each of the Supreme Court Justices voted in majority.
+            This example covers transformation strategies for mark type and data highlight.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 pt-3">
+          <h5>Mobile view</h5>
+        </div>
+        <div class="col-12 pt-3">
+          <h6>
+            Design specification <a class="pl-3" data-bs-toggle="collapse" href="#desktop-view-spec" role="button" aria-expanded="false" aria-controls="desktop-view-spec">View <i class="bi bi-arrow-down"></i></a>
+          </h6>
+          <div class="card collapse" id="desktop-view-spec">
+            <div class="card-body pb-0">
+<pre class="code">
+<code>{</code>
+<code>  "name": "kennedy-mobile",</code>
+<code>  "layout": {</code>
+<code>    "width": 375,</code>
+<code>    "height": 500,</code>
+<code>    "composition": "single",</code>
+<code>    "column": [</code>
+<code>      {</code>
+<code>        "field": "percentage",</code>
+<code>        "scale": {}</code>
+<code>      }</code>
+<code>    ],</code>
+<code>    "row": [</code>
+<code>      {</code>
+<code>        "field": "justice",</code>
+<code>        "type": "nominal",</code>
+<code>        "sort": {</code>
+<code>          "order": "descending",</code>
+<code>          "field": "percentage"</code>
+<code>        }</code>
+<code>      }</code>
+<code>    ]</code>
+<code>  },</code>
+<code>  "layer": [</code>
+<code>    {</code>
+<code>      "mark": {</code>
+<code>        "type": "bar",</code>
+<code>        "color": {</code>
+<code>          "value": "#eeeeee",</code>
+<code>          "conditions": [</code>
+<code>            {</code>
+<code>              "condition": "(datum.justice == 'Kennedy')",</code>
+<code>              "value": "#d90000"</code>
+<code>            }</code>
+<code>          ]</code>
+<code>        }</code>
+<code>      },</code>
+<code>      "text": [</code>
+<code>        {</code>
+<code>          "type": "on-axis",</code>
+<code>          "field": "justice",</code>
+<code>          "orient": "left",</code>
+<code>          "values": [</code>
+<code>            "Gorsuch",</code>
+<code>            "White",</code>
+<code>            "O'Connor",</code>
+<code>            "Roberts",</code>
+<code>            "Thomas",</code>
+<code>            "Scalia",</code>
+<code>            "Alito",</code>
+<code>            "Blackmun",</code>
+<code>            "Souter",</code>
+<code>            "Brennan",</code>
+<code>            "Kagan",</code>
+<code>            "Sotomayor",</code>
+<code>            "Marshall",</code>
+<code>            "Gorsuch",</code>
+<code>            "White",</code>
+<code>            "O'Connor",</code>
+<code>            "Roberts",</code>
+<code>            "Thomas",</code>
+<code>            "Scalia",</code>
+<code>            "Alito",</code>
+<code>            "Blackmun",</code>
+<code>            "Souter",</code>
+<code>            "Brennan",</code>
+<code>            "Kagan",</code>
+<code>            "Sotomayor",</code>
+<code>            "Marshall",</code>
+<code>            "Rehnquist",</code>
+<code>            "Breyer",</code>
+<code>            "Stevens",</code>
+<code>            "Ginsburg",</code>
+<code>            "Kennedy"</code>
+<code>          ],</code>
+<code>          "items": [</code>
+<code>            {</code>
+<code>              "fontWeight": 700,</code>
+<code>              "fontSize": 14,</code>
+<code>              "align": "left",</code>
+<code>              "width": 70,</code>
+<code>              "condition": [</code>
+<code>                "Kennedy"</code>
+<code>              ]</code>
+<code>            },</code>
+<code>            {</code>
+<code>              "fontWeight": 400,</code>
+<code>              "fontSize": 14,</code>
+<code>              "align": "left",</code>
+<code>              "width": 70,</code>
+<code>              "condition": [</code>
+<code>                "Gorsuch",</code>
+<code>                "White",</code>
+<code>                "O'Connor",</code>
+<code>                "Roberts",</code>
+<code>                "Thomas",</code>
+<code>                "Scalia",</code>
+<code>                "Alito",</code>
+<code>                "Blackmun",</code>
+<code>                "Souter",</code>
+<code>                "Brennan",</code>
+<code>                "Kagan",</code>
+<code>                "Sotomayor",</code>
+<code>                "Marshall",</code>
+<code>                "Gorsuch",</code>
+<code>                "White",</code>
+<code>                "O'Connor",</code>
+<code>                "Roberts",</code>
+<code>                "Thomas",</code>
+<code>                "Scalia",</code>
+<code>                "Alito",</code>
+<code>                "Blackmun",</code>
+<code>                "Souter",</code>
+<code>                "Brennan",</code>
+<code>                "Kagan",</code>
+<code>                "Sotomayor",</code>
+<code>                "Marshall",</code>
+<code>                "Rehnquist",</code>
+<code>                "Breyer",</code>
+<code>                "Stevens",</code>
+<code>                "Ginsburg"</code>
+<code>              ]</code>
+<code>            }</code>
+<code>          ],</code>
+<code>          "padding": 20,</code>
+<code>          "anchor": "middle"</code>
+<code>        },</code>
+<code>        {</code>
+<code>          "type": "on-mark",</code>
+<code>          "items": [</code>
+<code>            {</code>
+<code>              "color": "white",</code>
+<code>              "expression": "( isFirst('justice', datum) ? datum.value + '%' : datum.value )",</code>
+<code>              "fontWeight": 700</code>
+<code>            }</code>
+<code>          ],</code>
+<code>          "field": "percentage",</code>
+<code>          "orient": "middle-right",</code>
+<code>          "dx": -10,</code>
+<code>          "anchorAlign": "end",</code>
+<code>          "values": [</code>
+<code>            76</code>
+<code>          ]</code>
+<code>        },</code>
+<code>        {</code>
+<code>          "type": "on-mark",</code>
+<code>          "items": [</code>
+<code>            {</code>
+<code>              "color": "black",</code>
+<code>              "expression": "( isFirst('justice', datum) ? datum.value + '%' : datum.value )"</code>
+<code>            }</code>
+<code>          ],</code>
+<code>          "field": "percentage",</code>
+<code>          "orient": "middle-right",</code>
+<code>          "dx": -10,</code>
+<code>          "anchorAlign": "end",</code>
+<code>          "values": [</code>
+<code>            82,</code>
+<code>            68,</code>
+<code>            66,</code>
+<code>            65,</code>
+<code>            63,</code>
+<code>            62,</code>
+<code>            61,</code>
+<code>            57,</code>
+<code>            47,</code>
+<code>            46,</code>
+<code>            45,</code>
+<code>            44,</code>
+<code>            42</code>
+<code>          ]</code>
+<code>        }</code>
+<code>      ]</code>
+<code>    }</code>
+<code>  ],</code>
+<code>  "nondata": {</code>
+<code>    "items": [</code>
+<code>      {</code>
+<code>        "type": "text",</code>
+<code>        "x": 9,</code>
+<code>        "y": 75,</code>
+<code>        "width": 210,</code>
+<code>        "text": [</code>
+<code>          {</code>
+<code>            "align": "left",</code>
+<code>            "fontColor": "black",</code>
+<code>            "text": "Percentage of votes in the majority,<br/>over each justice’s career",</code>
+<code>            "lineHeight": "120%"</code>
+<code>          }</code>
+<code>        ],</code>
+<code>        "box": {</code>
+<code>          "fill": "white"</code>
+<code>        },</code>
+<code>        "visibility": {</code>
+<code>          "externalize": {</code>
+<code>            "position": "top"</code>
+<code>          }</code>
+<code>        }</code>
+<code>      }</code>
+<code>    ]</code>
+<code>  },</code>
+<code>  "title": {</code>
+<code>    "width": 350,</code>
+<code>    "items": [</code>
+<code>      {</code>
+<code>        "text": "In close decisions, Kennedy voted in the majority 76 percent of the time.",</code>
+<code>        "fontSize": 18,</code>
+<code>        "fontWeight": 700,</code>
+<code>        "offset": 30</code>
+<code>      }</code>
+<code>    ]</code>
+<code>  },</code>
+<code>  "data": [</code>
+<code>    {</code>
+<code>      "justice": "Gorsuch",</code>
+<code>      "percentage": 82,</code>
+<code>      "_index_": 0</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Kennedy",</code>
+<code>      "percentage": 76,</code>
+<code>      "_index_": 1</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "White",</code>
+<code>      "percentage": 68,</code>
+<code>      "_index_": 2</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "O'Connor",</code>
+<code>      "percentage": 66,</code>
+<code>      "_index_": 3</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Roberts",</code>
+<code>      "percentage": 65,</code>
+<code>      "_index_": 4</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Rehnquist",</code>
+<code>      "percentage": 65,</code>
+<code>      "_index_": 5</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Thomas",</code>
+<code>      "percentage": 63,</code>
+<code>      "_index_": 6</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Scalia",</code>
+<code>      "percentage": 62,</code>
+<code>      "_index_": 7</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Alito",</code>
+<code>      "percentage": 61,</code>
+<code>      "_index_": 8</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Blackmun",</code>
+<code>      "percentage": 57,</code>
+<code>      "_index_": 9</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Souter",</code>
+<code>      "percentage": 47,</code>
+<code>      "_index_": 10</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Stevens",</code>
+<code>      "percentage": 46,</code>
+<code>      "_index_": 11</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Brennan",</code>
+<code>      "percentage": 46,</code>
+<code>      "_index_": 12</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Kagan",</code>
+<code>      "percentage": 45,</code>
+<code>      "_index_": 13</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Sotomayor",</code>
+<code>      "percentage": 44,</code>
+<code>      "_index_": 14</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Breyer",</code>
+<code>      "percentage": 44,</code>
+<code>      "_index_": 15</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Ginsburg",</code>
+<code>      "percentage": 42,</code>
+<code>      "_index_": 16</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "justice": "Marshall",</code>
+<code>      "percentage": 42,</code>
+<code>      "_index_": 17</code>
+<code>    }</code>
+<code>  ]</code>
+<code>}</code>
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="col-5 pt-3">
+          <h6>View</h6>
+          <div id="fronto-view" class="mb-3" style="height: 665px; position: relative;"><div id="title-kennedy-mobile" data-role="fronto-title"><div style="position: relative; font-size: 14px;"><div data-role="title" style="width: 350px; margin-left: auto; margin-right: auto; margin-bottom: 30px; font-size: 18px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 700;">In close decisions, Kennedy voted in the majority 76 percent of the time.</div></div></div><div style="padding-bottom: 15px; position: relative; font-size: 14px; width: 385px;"><div data-role="externalAnnotation" style="display: flex;"><div style="text-align: left; font-weight: 400; line-height: 120%; color: black;">Percentage of votes in the majority,<br>over each justice’s career</div></div></div><div id="view-kennedy-mobile" data-role="fronto-view" class="vega-embed" style="left: 50%; transform: translate(-50%);"><div class="chart-wrapper fit-x fit-y" role="graphics-document" aria-roledescription="visualization" aria-label="Vega visualization" style="cursor: default; position: relative; height: auto;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="marks" width="385" height="510" viewBox="0 0 385 510" style="background-color: white;"><g fill="none" stroke-miterlimit="10" transform="translate(96,5)"><g class="mark-group role-frame root" role="graphics-object" aria-roledescription="group mark container"><g transform="translate(0,0)"><path class="background" aria-hidden="true" d="M0,0h284v500h-284Z" fill="transparent"></path><g><g class="mark-group role-axis"><g transform="translate(0.5,500.5)"><path class="background" aria-hidden="true" d="M0,0h0v0h0Z" pointer-events="none"></path><g></g><path class="foreground" aria-hidden="true" d="" pointer-events="none" display="none"></path></g></g><g class="mark-group role-axis" role="graphics-symbol" aria-roledescription="axis" aria-label="Y-axis for a discrete scale with 18 values: Gorsuch, Kennedy, White, O'Connor, Roberts, ending with Marshall"><g transform="translate(0.5,0.5)"><path class="background" aria-hidden="true" d="M0,0h0v0h0Z" pointer-events="none"></path><g><g class="mark-text role-axis-label" pointer-events="none"><text text-anchor="end" transform="translate(-20,17.388888888888914)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-p79391</text><text text-anchor="end" transform="translate(-20,45.16666666666669)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-p83774</text><text text-anchor="end" transform="translate(-20,72.94444444444447)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-p56708</text><text text-anchor="end" transform="translate(-20,100.72222222222226)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-n8648</text><text text-anchor="end" transform="translate(-20,128.50000000000003)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-n60154</text><text text-anchor="end" transform="translate(-20,156.2777777777778)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-n42835</text><text text-anchor="end" transform="translate(-20,184.0555555555556)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-n18928</text><text text-anchor="end" transform="translate(-20,211.83333333333337)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-n86513</text><text text-anchor="end" transform="translate(-20,239.61111111111114)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-p56602</text><text text-anchor="end" transform="translate(-20,267.3888888888889)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-n22865</text><text text-anchor="end" transform="translate(-20,295.1666666666667)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-n99807</text><text text-anchor="end" transform="translate(-20,322.94444444444446)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-n53327</text><text text-anchor="end" transform="translate(-20,350.7222222222223)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-p48032</text><text text-anchor="end" transform="translate(-20,378.50000000000006)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-p62400</text><text text-anchor="end" transform="translate(-20,406.2777777777778)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-n51778</text><text text-anchor="end" transform="translate(-20,434.0555555555556)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-p13606</text><text text-anchor="end" transform="translate(-20,461.83333333333337)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-p38145</text><text text-anchor="end" transform="translate(-20,489.61111111111114)" font-family="sans-serif" font-size="14px" fill="#000" fill-opacity="0.5" opacity="0">$-y-p5245</text></g></g><path class="foreground" aria-hidden="true" d="" pointer-events="none" display="none"></path></g></g><g class="mark-rect role-mark mark_0_marks" role="graphics-object" aria-roledescription="rect mark container"><path aria-label="percentage: 82; justice: Gorsuch; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,1.3888888888889142h258.75555555555553v25h-258.75555555555553Z" fill="#eeeeee"></path><path aria-label="percentage: 76; justice: Kennedy; $hl_0_color: #d90000" role="graphics-symbol" aria-roledescription="bar" d="M0,29.166666666666693h239.82222222222222v25h-239.82222222222222Z" fill="#d90000"></path><path aria-label="percentage: 68; justice: White; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,56.94444444444447h214.57777777777778v25h-214.57777777777778Z" fill="#eeeeee"></path><path aria-label="percentage: 66; justice: O'Connor; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,84.72222222222226h208.26666666666665v25h-208.26666666666665Z" fill="#eeeeee"></path><path aria-label="percentage: 65; justice: Roberts; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,112.50000000000003h205.11111111111111v25h-205.11111111111111Z" fill="#eeeeee"></path><path aria-label="percentage: 65; justice: Rehnquist; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,140.2777777777778h205.11111111111111v25h-205.11111111111111Z" fill="#eeeeee"></path><path aria-label="percentage: 63; justice: Thomas; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,168.0555555555556h198.79999999999998v25h-198.79999999999998Z" fill="#eeeeee"></path><path aria-label="percentage: 62; justice: Scalia; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,195.83333333333337h195.64444444444445v25h-195.64444444444445Z" fill="#eeeeee"></path><path aria-label="percentage: 61; justice: Alito; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,223.61111111111114h192.4888888888889v25h-192.4888888888889Z" fill="#eeeeee"></path><path aria-label="percentage: 57; justice: Blackmun; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,251.3888888888889h179.86666666666665v25h-179.86666666666665Z" fill="#eeeeee"></path><path aria-label="percentage: 47; justice: Souter; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,279.1666666666667h148.31111111111113v25h-148.31111111111113Z" fill="#eeeeee"></path><path aria-label="percentage: 46; justice: Stevens; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,306.94444444444446h145.15555555555554v25h-145.15555555555554Z" fill="#eeeeee"></path><path aria-label="percentage: 46; justice: Brennan; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,334.7222222222223h145.15555555555554v25h-145.15555555555554Z" fill="#eeeeee"></path><path aria-label="percentage: 45; justice: Kagan; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,362.50000000000006h142v25h-142Z" fill="#eeeeee"></path><path aria-label="percentage: 44; justice: Sotomayor; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,390.2777777777778h138.84444444444443v25h-138.84444444444443Z" fill="#eeeeee"></path><path aria-label="percentage: 44; justice: Breyer; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,418.0555555555556h138.84444444444443v25h-138.84444444444443Z" fill="#eeeeee"></path><path aria-label="percentage: 42; justice: Ginsburg; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,445.83333333333337h132.53333333333333v25h-132.53333333333333Z" fill="#eeeeee"></path><path aria-label="percentage: 42; justice: Marshall; $hl_0_color: #eeeeee" role="graphics-symbol" aria-roledescription="bar" d="M0,473.61111111111114h132.53333333333333v25h-132.53333333333333Z" fill="#eeeeee"></path></g></g><path class="foreground" aria-hidden="true" d="" display="none"></path></g></g></g></svg><form class="vega-bindings"></form><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-1" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 267.648px; top: 46.6667px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: white; font-weight: 700;">76</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-0" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 286.582px; top: 18.8889px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">82%</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-2" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 242.404px; top: 74.4444px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">68</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-3" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 236.093px; top: 102.222px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">66</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-4" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 232.937px; top: 130px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">65</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-5" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 232.937px; top: 157.778px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">65</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-6" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 226.626px; top: 185.556px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">63</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-7" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 223.471px; top: 213.333px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">62</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-8" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 220.315px; top: 241.111px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">61</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-9" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 207.693px; top: 268.889px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">57</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-10" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 176.137px; top: 296.667px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">47</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-11" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 172.982px; top: 324.444px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">46</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-12" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 172.982px; top: 352.222px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">46</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-13" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 169.826px; top: 380px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">45</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-14" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 166.671px; top: 407.778px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">44</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-15" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 166.671px; top: 435.556px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">44</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-16" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 160.359px; top: 463.333px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">42</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-percentage-17" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 160.359px; top: 491.111px; transform: translateX(-10px) translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: right; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="color: black;">42</div></annotation></div><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 15.8889px; left: 76.5px;"><div class="$-y-p79391"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Gorsuch</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 71.4444px; left: 76.5px;"><div class="$-y-p56708"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">White</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 99.2222px; left: 76.5px;"><div class="$-y-n8648"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">O'Connor</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 127px; left: 76.5px;"><div class="$-y-n60154"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Roberts</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 182.556px; left: 76.5px;"><div class="$-y-n18928"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Thomas</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 210.333px; left: 76.5px;"><div class="$-y-n86513"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Scalia</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 238.111px; left: 76.5px;"><div class="$-y-p56602"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Alito</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 265.889px; left: 76.5px;"><div class="$-y-n22865"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Blackmun</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 293.667px; left: 76.5px;"><div class="$-y-n99807"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Souter</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 349.222px; left: 76.5px;"><div class="$-y-p48032"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Brennan</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 377px; left: 76.5px;"><div class="$-y-p62400"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Kagan</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 404.778px; left: 76.5px;"><div class="$-y-n51778"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Sotomayor</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 488.111px; left: 76.5px;"><div class="$-y-p5245"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Marshall</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 154.778px; left: 76.5px;"><div class="$-y-n42835"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Rehnquist</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 432.556px; left: 76.5px;"><div class="$-y-p13606"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Breyer</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 321.444px; left: 76.5px;"><div class="$-y-n53327"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Stevens</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 460.333px; left: 76.5px;"><div class="$-y-p38145"><div style="width: 70px; font-size: 14px; font-weight: 400; text-align: left;">Ginsburg</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-y" style="position: absolute; line-height: 100%; transform: translateX(-100%) translateY(-50%); top: 43.6667px; left: 76.5px;"><div class="$-y-p83774"><div style="width: 70px; font-size: 14px; font-weight: 700; text-align: left;">Kennedy</div></div></replacement></div></div>
+        </div>
+        <div class="col-12 pt-3">
+          <h5>Cicero Specification</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 pt-3">
+          <h6>Specification</h6>
+          <div class="card">
+            <div class="card-body pb-0">
+<pre class="code">
+<code>{</code>
+<code>  "$schema": "../cicero.json",</code>
+<code>  "name": "kennedy-mobile",</code>
+<code>  "description": "This is a Cicero specification for 'Justice Kennedy' visualization from desktop to mobile.",</code>
+<code>  "metadata": {</code>
+<code>    "condition": "small"</code>
+<code>  },</code>
+<code>  "transformations": [</code>
+<code>    {</code>
+<code>      "description": "Resize the chart",</code>
+<code>      "specifier": {</code>
+<code>        "role": "view"</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "size": [</code>
+<code>          800,</code>
+<code>          180</code>
+<code>        ]</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Remove a row element",</code>
+<code>      "specifier": {</code>
+<code>        "role": "view.row"</code>
+<code>      },</code>
+<code>      "action": "remove"</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Replace as axis labels",</code>
+<code>      "specifier": {</code>
+<code>        "role": "axis.label",</code>
+<code>        "field": "justice"</code>
+<code>      },</code>
+<code>      "action": "replace",</code>
+<code>      "option": {</code>
+<code>        "to": {</code>
+<code>          "role": "mark.label"</code>
+<code>        }</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Remove on-mark label",</code>
+<code>      "specifier": {</code>
+<code>        "role": "mark.label",</code>
+<code>        "field": "percentage"</code>
+<code>      },</code>
+<code>      "action": "remove"</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Re-format axis labels",</code>
+<code>      "specifier": {</code>
+<code>        "role": "mark.label",</code>
+<code>        "field": "justice"</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "orient": "bottom-center",</code>
+<code>        "anchor": "start",</code>
+<code>        "angle": 45,</code>
+<code>        "fontSize": 12,</code>
+<code>        "dy": 20,</code>
+<code>        "dx": -2,</code>
+<code>        "padding": 0</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Add the horizontal axis labels",</code>
+<code>      "specifier": {</code>
+<code>        "role": "axis",</code>
+<code>        "field": "percentage"</code>
+<code>      },</code>
+<code>      "action": "add",</code>
+<code>      "option": {</code>
+<code>        "role": "label",</code>
+<code>        "values": [</code>
+<code>          40,</code>
+<code>          50,</code>
+<code>          60,</code>
+<code>          70,</code>
+<code>          80,</code>
+<code>          90</code>
+<code>        ],</code>
+<code>        "expression": "datum.value + '%'",</code>
+<code>        "fontSize": 13,</code>
+<code>        "orient": "top"</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Add the horizontal axis grid",</code>
+<code>      "specifier": {</code>
+<code>        "role": "axis",</code>
+<code>        "field": "percentage"</code>
+<code>      },</code>
+<code>      "action": "add",</code>
+<code>      "option": {</code>
+<code>        "role": "grid",</code>
+<code>        "stroke": "#cccccc",</code>
+<code>        "strokeDash": [</code>
+<code>          3,</code>
+<code>          1</code>
+<code>        ]</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Change column domain",</code>
+<code>      "specifier": {</code>
+<code>        "role": "column",</code>
+<code>        "field": "percentage"</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "scale": {</code>
+<code>          "domain": [</code>
+<code>            35,</code>
+<code>            95</code>
+<code>          ]</code>
+<code>        }</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Change mark type to bar",</code>
+<code>      "specifier": {</code>
+<code>        "role": "mark"</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "mark": "circle",</code>
+<code>        "color": {</code>
+<code>          "value": "black"</code>
+<code>        },</code>
+<code>        "size": {</code>
+<code>          "value": 80</code>
+<code>        }</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Color mark",</code>
+<code>      "specifier": {</code>
+<code>        "role": "mark",</code>
+<code>        "data": {</code>
+<code>          "justice": "Kennedy"</code>
+<code>        }</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "color": {</code>
+<code>          "value": "black"</code>
+<code>        }</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Add a rule mark for axis domain",</code>
+<code>      "specifier": {</code>
+<code>        "role": "emphasis"</code>
+<code>      },</code>
+<code>      "action": "add",</code>
+<code>      "option": {</code>
+<code>        "id": "domain",</code>
+<code>        "width": 800,</code>
+<code>        "height": 1,</code>
+<code>        "x": 0,</code>
+<code>        "y": 102.5,</code>
+<code>        "mark": {</code>
+<code>          "shape": "rule",</code>
+<code>          "stroke": "black"</code>
+<code>        }</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Internalize an annotation",</code>
+<code>      "specifier": {</code>
+<code>        "role": "annotation"</code>
+<code>      },</code>
+<code>      "action": "reposition",</code>
+<code>      "option": {</code>
+<code>        "external": false,</code>
+<code>        "x": 9,</code>
+<code>        "y": 68</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Change the annotation color",</code>
+<code>      "specifier": {</code>
+<code>        "role": "annotation"</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "fontColor": "#999999",</code>
+<code>        "width": 240</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Enlarge title font size",</code>
+<code>      "specifier": {</code>
+<code>        "role": "title"</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "fontSize": 22</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Set mark label background or 'Kennedy'",</code>
+<code>      "specifier": {</code>
+<code>        "role": "mark.label",</code>
+<code>        "data": {</code>
+<code>          "justice": "Kennedy"</code>
+<code>        }</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "width": 61,</code>
+<code>        "fill": "#ffe100",</code>
+<code>        "padding": 5,</code>
+<code>        "fontWeight": 900,</code>
+<code>        "radius": 5,</code>
+<code>        "dy": 15,</code>
+<code>        "dx": -7</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Adjust label appearance",</code>
+<code>      "specifier": {</code>
+<code>        "role": "mark.label",</code>
+<code>        "field": "justice",</code>
+<code>        "values": ["Rehnquist"]</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "expression": "', ' + datum.value",</code>
+<code>        "dy": 50,</code>
+<code>        "dx": 26</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Adjust label appearance",</code>
+<code>      "specifier": {</code>
+<code>        "role": "mark.label",</code>
+<code>        "field": "justice",</code>
+<code>        "values": ["Breyer"]</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "expression": "', ' + datum.value",</code>
+<code>        "dy": 60,</code>
+<code>        "dx": 36</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Adjust label appearance",</code>
+<code>      "specifier": {</code>
+<code>        "role": "mark.label",</code>
+<code>        "field": "justice",</code>
+<code>        "values": ["Stevens"]</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "expression": "', ' + datum.value",</code>
+<code>        "dy": 51,</code>
+<code>        "dx": 27</code>
+<code>      }</code>
+<code>    },</code>
+<code>    {</code>
+<code>      "description": "Adjust label appearance",</code>
+<code>      "specifier": {</code>
+<code>        "role": "mark.label",</code>
+<code>        "field": "justice",</code>
+<code>        "values": ["Ginsburg"]</code>
+<code>      },</code>
+<code>      "action": "modify",</code>
+<code>      "option": {</code>
+<code>        "expression": "', ' + datum.value",</code>
+<code>        "dy": 52,</code>
+<code>        "dx": 30</code>
+<code>      }</code>
+<code>    }</code>
+<code>  ]</code>
+<code>}</code>
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 pt-3">
+          <h6>Transformed View</h6>
+          <div class="fronto-view-transform" style="width: 900px; height: 350px; position: relative;"><div id="title-kennedy-mobile" data-role="fronto-title"><div style="position: relative; font-size: 14px;"><div data-role="title" style="width: 350px; margin-left: auto; margin-right: auto; margin-bottom: 30px; font-size: 22px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 700;">In close decisions, Kennedy voted in the majority 76 percent of the time.</div></div></div><div id="view-kennedy-mobile" data-role="fronto-view" class="vega-embed" style="left: 50%; transform: translate(-50%);"><div class="chart-wrapper fit-x fit-y" role="graphics-document" aria-roledescription="visualization" aria-label="Vega visualization" style="cursor: default; position: relative;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="marks" width="810" height="190" viewBox="0 0 810 190" style="background-color: white;"><g fill="none" stroke-miterlimit="10" transform="translate(5,20)"><g class="mark-group role-frame root" role="graphics-object" aria-roledescription="group mark container"><g transform="translate(0,0)"><path class="background" aria-hidden="true" d="M0,0h800v165h-800Z" fill="transparent"></path><g><g class="mark-group role-axis" aria-hidden="true"><g transform="translate(0.5,0.5)"><path class="background" aria-hidden="true" d="M0,0h0v0h0Z" pointer-events="none"></path><g><g class="mark-rule role-axis-grid" pointer-events="none"><line transform="translate(67,0)" x2="0" y2="165" stroke="#cccccc" stroke-width="1" stroke-dasharray="3,1" opacity="1"></line><line transform="translate(200,0)" x2="0" y2="165" stroke="#cccccc" stroke-width="1" stroke-dasharray="3,1" opacity="1"></line><line transform="translate(333,0)" x2="0" y2="165" stroke="#cccccc" stroke-width="1" stroke-dasharray="3,1" opacity="1"></line><line transform="translate(467,0)" x2="0" y2="165" stroke="#cccccc" stroke-width="1" stroke-dasharray="3,1" opacity="1"></line><line transform="translate(600,0)" x2="0" y2="165" stroke="#cccccc" stroke-width="1" stroke-dasharray="3,1" opacity="1"></line><line transform="translate(733,0)" x2="0" y2="165" stroke="#cccccc" stroke-width="1" stroke-dasharray="3,1" opacity="1"></line></g></g><path class="foreground" aria-hidden="true" d="" pointer-events="none" display="none"></path></g></g><g class="mark-group role-axis" role="graphics-symbol" aria-roledescription="axis" aria-label="X-axis for a linear scale with values from 35 to 95"><g transform="translate(0.5,0.5)"><path class="background" aria-hidden="true" d="M0,0h0v0h0Z" pointer-events="none"></path><g><g class="mark-text role-axis-label" pointer-events="none"><text text-anchor="middle" transform="translate(66.66666666666666,-5)" font-family="sans-serif" font-size="13px" fill="#000" fill-opacity="0.5" opacity="0">$-x-p1660</text><text text-anchor="middle" transform="translate(200,-5)" font-family="sans-serif" font-size="13px" fill="#000" fill-opacity="0.5" opacity="0">$-x-p1691</text><text text-anchor="middle" transform="translate(333.33333333333337,-5)" font-family="sans-serif" font-size="13px" fill="#000" fill-opacity="0.5" opacity="0">$-x-p1722</text><text text-anchor="middle" transform="translate(466.6666666666667,-5)" font-family="sans-serif" font-size="13px" fill="#000" fill-opacity="0.5" opacity="0">$-x-p1753</text><text text-anchor="middle" transform="translate(600,-5)" font-family="sans-serif" font-size="13px" fill="#000" fill-opacity="0.5" opacity="0">$-x-p1784</text><text text-anchor="middle" transform="translate(733.3333333333333,-5)" font-family="sans-serif" font-size="13px" fill="#000" fill-opacity="0.5" opacity="0">$-x-p1815</text></g></g><path class="foreground" aria-hidden="true" d="" pointer-events="none" display="none"></path></g></g><g class="mark-symbol role-mark mark_0_marks" role="graphics-object" aria-roledescription="symbol mark container"><path aria-label="percentage: 82; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(626.6666666666666,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 76; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(546.6666666666666,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 68; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(440.00000000000006,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 66; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(413.33333333333337,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 65; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(400,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 65; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(400,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 63; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(373.3333333333333,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 62; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(360,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 61; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(346.6666666666667,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 57; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(293.3333333333333,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 47; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(160,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 46; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(146.66666666666666,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 46; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(146.66666666666666,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 45; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(133.33333333333331,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 44; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(120,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 44; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(120,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 42; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(93.33333333333333,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path><path aria-label="percentage: 42; $hl_0_color: black" role="graphics-symbol" aria-roledescription="circle" transform="translate(93.33333333333333,82.5)" d="M4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,-4.47213595499958,0A4.47213595499958,4.47213595499958,0,1,1,4.47213595499958,0" fill="black" stroke-width="2" opacity="0.7"></path></g></g><path class="foreground" aria-hidden="true" d="" display="none"></path></g></g></g></svg><form class="vega-bindings"></form><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-0" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 631.667px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Gorsuch</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-2" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 445px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">White</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-3" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 418.333px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">O'Connor</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-4" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 405px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Roberts</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-6" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 378.333px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Thomas</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-7" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 365px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Scalia</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-8" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 351.667px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Alito</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-9" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 298.333px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Blackmun</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-10" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 165px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Souter</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-12" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 151.667px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Brennan</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-13" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 138.333px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Kagan</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-14" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 125px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Sotomayor</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-17" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 98.3333px; top: 106.972px; transform: translateX(-2px) translateY(20px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">Marshall</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-1" style="display: block; box-sizing: border-box; width: 61px; height: auto; position: absolute; left: 551.667px; top: 106.972px; transform: translateX(-7px) translateY(15px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 5px; border-radius: 5px; background-color: rgb(255, 225, 0); border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 900; text-align: left;">Kennedy</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-5" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 405px; top: 106.972px; transform: translateX(26px) translateY(50px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">, Rehnquist</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-15" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 125px; top: 106.972px; transform: translateX(36px) translateY(60px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">, Breyer</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-11" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 151.667px; top: 106.972px; transform: translateX(27px) translateY(51px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">, Stevens</div></annotation><annotation data-role="internalAnnotation" data-name="on-mark-anno-justice-16" style="display: block; box-sizing: border-box; width: 68.1739px; height: auto; position: absolute; left: 98.3333px; top: 106.972px; transform: translateX(30px) translateY(52px) rotate(45deg); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 0px; border-radius: 0px; background-color: transparent; border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="font-size: 12px; font-weight: 400; text-align: left;">, Ginsburg</div></annotation><annotation data-role="internalAnnotation" data-name="nondata_text_0" style="display: block; box-sizing: border-box; width: 240px; height: auto; position: absolute; left: 9px; top: 68px; transform: translateY(-50%); opacity: 1; font-size: 14px; line-height: 120%; color: rgb(34, 34, 34); text-align: left; font-weight: 400; text-overflow: ellipsis; padding: 3px; border-radius: 0px; background-color: rgb(255, 255, 255); border-color: rgb(34, 34, 34); border-style: solid; border-width: 0px;"><div style="text-align: left; font-weight: 400; line-height: 120%; color: rgb(153, 153, 153);">Percentage of votes in the majority,<br>over each justice’s career</div></annotation><emphasis data-role="informaltionalMarks" data-name="domain" style="display: block; box-sizing: border-box; width: 800px; height: 1px; position: absolute; left: 0px; top: 102.5px; transform: translateY(-50%) rotate(0.07deg); opacity: 1; font-size: 1px; background-color: rgb(0, 0, 0); border-radius: 0px; border-color: rgb(0, 0, 0); border-style: solid; border-width: 0px;"></emphasis></div><replacement data-role="text-replacement" class="fronto-label-axis-x" style="position: absolute; line-height: 100%; transform: translateX(-50%); top: 2.5px; left: 72.1667px;"><div class="$-x-p1660"><div style="font-size: 13px; text-align: left;">40%</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-x" style="position: absolute; line-height: 100%; transform: translateX(-50%); top: 2.5px; left: 205.5px;"><div class="$-x-p1691"><div style="font-size: 13px; text-align: left;">50%</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-x" style="position: absolute; line-height: 100%; transform: translateX(-50%); top: 2.5px; left: 338.833px;"><div class="$-x-p1722"><div style="font-size: 13px; text-align: left;">60%</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-x" style="position: absolute; line-height: 100%; transform: translateX(-50%); top: 2.5px; left: 472.167px;"><div class="$-x-p1753"><div style="font-size: 13px; text-align: left;">70%</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-x" style="position: absolute; line-height: 100%; transform: translateX(-50%); top: 2.5px; left: 605.5px;"><div class="$-x-p1784"><div style="font-size: 13px; text-align: left;">80%</div></div></replacement><replacement data-role="text-replacement" class="fronto-label-axis-x" style="position: absolute; line-height: 100%; transform: translateX(-50%); top: 2.5px; left: 738.833px;"><div class="$-x-p1815"><div style="font-size: 13px; text-align: left;">90%</div></div></replacement></div></div>
+        </div>
+      </div>
+    </div>
+    <footer class="container my-5">
+      <div class="row">
+        <div class="col-12" style="color: #999999;">
+          &copy; 2021 Anonymous
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
