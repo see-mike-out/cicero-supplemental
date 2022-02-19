@@ -14,5 +14,8 @@ The PDF file, "expressing-mobilevisfixer-actions.pdf", presents Cicero expressio
 ## Two additional walk-through cases.
 The PDF file, "additional-walkthrough.pdf", provides two in-depth walk-through cases for Disaster Cost (from mobile to desktop) and Bond Yields (from desktop to mobile)
 
+## The formal specification of Cicero
+The PDF file, "cicero-formal-spec-extended.pdf", contains the formal specification of the Cicero grammar.
+
 ## The formal specification of our extended Vega-Lite
 The PDF file, "extended-vl-formal-spec.pdf", contains the formal specification of our extended Vega-Lite that we used as a rendering grammar for our Cicero compiler.
