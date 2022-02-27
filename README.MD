@@ -26,7 +26,7 @@ The PDF file, "extended-vl-formal-spec.pdf", contains the formal specification o
 To cite this work, use the following formats.
 
 ### Bibtex
-`
+```
 @inproceedings{kim2022,
     title        = {Cicero: a declarative grammar for responsive visualization},
     author       = {Kim, Hyeok and Rossi, Ryan and Du, Fan and Guo, Shunan and Koh, Eunyee and Hullman, Jessica and Hoffswell, Jane},
@@ -36,7 +36,7 @@ To cite this work, use the following formats.
     series       = {CHI '22},
     doi          = {10.1145/3491102.3517455}
 }
-`
+```
 
 ### APA
 Kim, H., Rossi, R., Du, F., Koh, E., Guo, S., Hullman, J., & Hoffswell, J. (2022). Cicero: a declarative grammar for responsive visualization. *Proceedings of the CHI Conference on Human Factors in Computing Systems*. https://10.1145/3491102.3517455 
