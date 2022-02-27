@@ -1,6 +1,6 @@
 # Supplemental Material for Cicero
 This readme file introduces each piece of supplemental material for the paper submission of "Cicero". 
-Online version is also available at https://see-mike-out.github.io/cicero-supplementary
+Online version is also available at [https://see-mike-out.github.io/cicero-supplementary](https://see-mike-out.github.io/cicero-supplementary)
 
 ## Cicero Gallery and Video Demo of Our Recommender Prototype
 To open the gallery, open "index.html" on your Web browser (Chrome is strongly recommended).
