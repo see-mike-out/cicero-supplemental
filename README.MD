@@ -1,6 +1,7 @@
 # Supplemental Material for Cicero
-This readme file introduces each piece of supplemental material for the paper submission of "Cicero". 
-Online version is also available at [https://see-mike-out.github.io/cicero-supplementary](https://see-mike-out.github.io/cicero-supplementary)
+This repository contains the Supplemental Material for a CHI 2022 paper, "Cicero: a declarative grammar for responsive visualizatoin."
+
+Online version: [https://see-mike-out.github.io/cicero-supplementary](https://see-mike-out.github.io/cicero-supplementary)
 
 ## Cicero Gallery and Video Demo of Our Recommender Prototype
 To open the gallery, open "index.html" on your Web browser (Chrome is strongly recommended).
@@ -20,3 +21,22 @@ The PDF file, "cicero-formal-spec-extended.pdf", contains the formal specificati
 
 ## The formal specification of our extended Vega-Lite
 The PDF file, "extended-vl-formal-spec.pdf", contains the formal specification of our extended Vega-Lite that we used as a rendering grammar for our Cicero compiler.
+
+## Citation
+To cite this work, use the following formats.
+
+### Bibtex
+`
+@inproceedings{kim2022,
+    title        = {Cicero: a declarative grammar for responsive visualization},
+    author       = {Kim, Hyeok and Rossi, Ryan and Du, Fan and Guo, Shunan and Koh, Eunyee and Hullman, Jessica and Hoffswell, Jane},
+    year         = 2022,
+    booktitle    = {Proceedings of the CHI Conference on Human Factors in Computing Systems},
+    publisher    = {ACM},
+    series       = {CHI '22},
+    doi          = {10.1145/3491102.3517455}
+}
+`
+
+### APA
+Kim, H., Rossi, R., Du, F., Koh, E., Guo, S., Hullman, J., & Hoffswell, J. (2022). Cicero: a declarative grammar for responsive visualization. *Proceedings of the CHI Conference on Human Factors in Computing Systems*. https://10.1145/3491102.3517455 
