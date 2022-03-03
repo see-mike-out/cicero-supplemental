@@ -1,7 +1,7 @@
 # Supplemental Material for Cicero
 This repository contains the Supplemental Material for a CHI 2022 paper, "Cicero: a declarative grammar for responsive visualizatoin."
 
-Online version: [https://see-mike-out.github.io/cicero-supplementary](https://see-mike-out.github.io/cicero-supplementary)
+Online version: [https://see-mike-out.github.io/cicero-supplemental](https://see-mike-out.github.io/cicero-supplemental)
 
 ## Cicero Gallery and Video Demo of Our Recommender Prototype
 To open the gallery, open "index.html" on your Web browser (Chrome is strongly recommended).
